@@ -129,7 +129,6 @@ _Once all the prerequisites are met, the required API Keys and dependencies must
    ```
 5. In the .env file, enter your credentials generated in the above steps (google OAuth details can be found in the google cloud console and mongoDB access URI from the mongoDB cluster dashboard ).
 6. Good to go! Start the project locally using the following command, and go to [http://localhost:9000](http://localhost:9000)
-4. Enter your API in `config.js`
    ```sh
    npm start
    ```
