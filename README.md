@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/rushabhkela/XChange">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="80">
   </a>
 
   <h3 align="center">XChange</h3>
@@ -144,16 +144,16 @@ _Once all the prerequisites are met, the required API Keys and dependencies must
 ### Trading Terminal
 
 <div align="center">
-    <img src="images/terminal.png" alt="Terminal" width="300">
+    <img src="images/terminal.png" alt="Terminal">
     <br>
 </div>
 
 ### Visualisation Dashboard
 
 <div align="center">
-    <img src="images/visual1.png" alt="Vis1" width="300">
-    <img src="images/visual2.png" alt="Vis2" width="300">
-    <img src="images/visual3.png" alt="Vis3" width="300">
+    <img src="images/visual1.png" alt="Vis1">
+    <img src="images/visual2.png" alt="Vis2">
+    <img src="images/visual3.png" alt="Vis3">
     <br>
 </div>
 
