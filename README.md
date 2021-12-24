@@ -55,7 +55,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Product Name Screen Shot][product-screenshot]
+<img src="images/land1.png" alt="Vis1">
+<img src="images/land2.png" alt="Vis2">
+<img src="images/land3.png" alt="Vis3">
 
 With the increase in the count of new retail investors in Stock Market there was also a problem rising suddenly, lack of guidance and experience. 
 People start believing easily on tips and tricks and made short term profits, but today markets are at all time high. 
