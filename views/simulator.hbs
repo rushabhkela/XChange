@@ -1,0 +1,385 @@
+<!-- partial:index.partial.html -->
+<div class="page-wrapper chiller-theme toggled" id="simulator">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars" onclick="resetWindowSize()"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="/">XChange</a>
+        <div id="close-sidebar" onclick="changeWindowSize()">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://ui-avatars.com/api/?name={{user.name}}"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">{{user.name}}
+          </span>
+          <span class="user-role">User</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" style="height: 25px; padding-top:5px" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu" style="color: white;">
+        <ul>
+          <li class="header-menu">
+            <span>Information</span>
+          </li>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-chart-line"></i>
+              <span>Current Buying Price </span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#" id="cbp"></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-globe"></i>
+              <span>Available Balance </span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#" id="abl">₹ 100000.00</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-menu">
+            <span>Purchase</span>
+            <div class="container" style="margin-left: 5px;">
+              <input type="number" name="stockcount" id="stockcount" style="width: 90%;" class="form-control">
+            </div>
+            {{!-- <span>Total Amount : </span>
+            <br>
+            <span id="totamt" ></span> --}}
+            <br>
+            <div class="container" style="margin-left: 5px;">
+              <button class="btn btn-success" onclick="buyStock()">Buy</button>
+              &nbsp;&nbsp;&nbsp;
+              <button class="btn btn-danger" onclick="sellStock()">Sell</button>
+            </div>
+
+          </li>
+          <hr>
+          <li class="header-menu">
+            <span style="font-size: larger; margin-bottom:-100px;">Portfolio :</span>
+            <br>
+            <span id="portfolio" style="margin-top:-100px">₹ 100000.00</span>
+          </li>
+          <li class="header-menu">
+            <span>Recent Transaction : </span>
+            <br>
+            <span id="rt"></span>
+
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <span>Back to Home Page</span>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <div class="float-container">
+    <h1>TRADING TERMINAL</h1>
+    <div class="float-child-chart" id='chart' style="width: 60%;">
+      <label for="startdate">Start Date: </label>
+      <input type="date" name="startdate" id="startdate">
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <label for="enddate">End Date: </label>
+      <input type="date" name="enddate" id="enddate">
+      <br>
+      <br>
+      <label for="companies">Select Stock : </label>
+      <select id="companies" class="form-select" name="companies"
+        style="width: 50%; display:inline-block; margin-top:-3px">
+        <option value="RELIANCE">Reliance</option>
+        <option value="BAJFINANCE">Bajaj Finance</option>
+        <option value="HINDUNILVR">Hindu Unilever Ltd.</option>
+        <option value="HDFC">HDFC</option>
+        <option value="SBIN">State Bank of India</option>
+        <option value="ITC">ITC Ltd.</option>
+        <option value="MARUTI">Maruti Suzuki India Ltd.</option>
+        <option value="TCS">Tata Consultancy Services Ltd.</option>
+        <option value="INFY">Infosys</option>
+        <option value="HCLTECH">HCL Technologies</option>
+        <option value="HINDALCO">Hindalco Industries Ltd.</option>
+        <option value="ADANITRANS">Adani Transmission Ltd.</option>
+        <option value="ULTRACEMCO">UltraTech Cement Ltd.</option>
+        <option value="NESTLEIND">Nestle India Ltd.</option>
+        <option value="TATASTEEL">TATA Steel</option>
+        <option value="ADANIPORTS">Adani Ports and Special Economic Ltd.</option>
+        <option value="ONGC">Oil and Natural Gas Corporation Ltd.</option>
+        <option value="DABUR">Dabur India Ltd.</option>
+        <option value="BPCL">Bharat Petroleum Corporation Ltd.</option>
+        <option value="YESBANK">Yes Bank</option>
+        <option value="GAIL">GAIL (India) Ltd.</option>
+        <option value="COLPAL">Colgate-Palmolive India Ltd.</option>
+      </select>
+      <button style="display:inline-block" type="button" onclick="changeChart()" class="btn btn-success"><b>View
+          Analysis</b></button>
+      <br>
+      <br>
+    </div>
+    <br>
+      <br>
+      <br>
+      <br>
+    <div class="float-child-line " ></div>
+    <div class="float-child-news" id='news'>
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title" id="newsa">Sensex crashed over 1,000 points 14 times in 2020</h5>
+          <p class="card-text" id="sa"></p>
+          <a href="#" class="btn btn-primary" id="linka">View More</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title" id="newsb">The big risk for Indian stock market rally</h5>
+          <p class="card-text" id="sb"></p>
+          <a href="#" class="btn btn-primary" id="linkb">View More</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title" id="newsc">Reliance Hit Worst, IT Sectors weakens</h5>
+          <p class="card-text" id="sc"></p>
+          <a href="#" class="btn btn-primary" id="linkc">View More</a>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <script>
+    function resetWindowSize() {
+      document.getElementById('simulator').style.marginLeft = "20%";
+    }
+
+    function changeWindowSize() {
+      document.getElementById('simulator').style.marginLeft = "5%";
+    }
+    resetWindowSize();
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const chartProperties = {
+      width: 700,
+      height: 540,
+      timeScale: {
+        timeVisible: true,
+        secondsVisible: false,
+      },
+      layout: {
+        textColor: 'rgba(0, 0, 0, 0.9)',
+      },
+      grid: {
+        vertLines: {
+          color: 'rgba(197, 203, 206, 0.5)',
+        },
+        horzLines: {
+          color: 'rgba(197, 203, 206, 0.5)',
+        },
+      },
+      crosshair: {
+        mode: LightweightCharts.CrosshairMode.Normal,
+      },
+      rightPriceScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+      },
+      timeScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+      },
+    }
+    const domElement = document.getElementById('chart');
+    const chart = LightweightCharts.createChart(domElement, chartProperties);
+    const candleSeries = chart.addCandlestickSeries();
+
+    var cdata;
+    var flag = true;
+    async function Chart() {
+      for (i = 1; i < 365; i++) {
+        if (i == 1) {
+          fetch(`http://localhost:9000/getdata/` + i)
+            .then(res => res.json())
+            .then(data => {
+              cdata = data.map(d => {
+                return { time: d.Date, open: parseFloat(d.Open_Price), high: parseFloat(d.High_Price), low: parseFloat(d.Low_Price), close: parseFloat(d.Close_Price) }
+              });
+              candleSeries.setData(cdata);
+            })
+            .catch(err => log(err))
+        }
+        else {
+          fetch(`http://localhost:9000/getdata/` + i)
+            .then(res => res.json())
+            .then(data => {
+              cdata = data.map(d => {
+                return { time: d.Date, open: parseFloat(d.Open_Price), high: parseFloat(d.High_Price), low: parseFloat(d.Low_Price), close: parseFloat(d.Close_Price) }
+              });
+              candleSeries.setData(cdata);
+            })
+            .catch(err => log(err))
+        }
+        if(!flag) {
+          break;
+        }
+        await sleep(500);
+      }
+    }
+    Chart();
+    var b = 0;
+    var avail = 100000;
+    var ns = 0;
+    var curr_date = "";
+    function buyStock() {
+      var num = Number(document.getElementById('stockcount').value);
+      var f = confirm("Buy Stock\nTotal Amount: " + "₹ " + (num*Number(document.getElementById('cbp').innerHTML.slice(2))));
+      if(f) {
+        ns += num;
+        var bbbb = Number(document.getElementById('cbp').innerHTML.slice(2));
+        avail = avail - (num*bbbb);
+        document.getElementById('abl').innerHTML = avail;
+        b = 1;
+
+        document.getElementById('rt').innerHTML = `
+            Order : Buy <br>
+            Stock : ` + document.getElementById('companies').value + `<br>
+            Qty : ` + num + `<br>
+            Price : ₹ ` + bbbb + `<br>
+            Date : ` + curr_date + `<br>
+        `;
+      }
+    }
+
+    function sellStock() {
+      var num = Number(document.getElementById('stockcount').value);
+      if(num > ns) {
+        alert("Not Enough Stock.");
+        return;
+      }
+      var f = confirm("Sell Stock\nTotal Amount: " + "₹ " + (num*Number(document.getElementById('cbp').innerHTML.slice(2))));
+      if(f) {
+        ns -= num;
+        var bbbb = Number(document.getElementById('cbp').innerHTML.slice(2));
+        avail = avail + (num*bbbb);
+        document.getElementById('abl').innerHTML = avail;
+        b = 1;
+
+        document.getElementById('rt').innerHTML = `
+            Order : Sell <br>
+            Stock : ` + document.getElementById('companies').value + `<br>
+            Qty : ` + num + `<br>
+            At Price : ₹ ` + bbbb + `<br>
+            Date : ` + curr_date + `<br>
+        `;
+      }
+    }
+
+    async function changeChart() {
+      flag = false;
+      var sd = document.getElementById('startdate').value;
+      var ed = document.getElementById('enddate').value;
+      var stock = document.getElementById('companies').value;
+
+      var d = new Date(sd);
+      var syear = d.getFullYear();
+      var smonth = (d.getMonth() + 1) + "";
+      smonth = smonth.length < 2 ? "0" + smonth : smonth;
+      var sday = d.getDate() + "";
+      sday = sday.length < 2 ? "0" + sday : sday;
+
+      var startdate = syear + "-" + smonth + "-" + sday;
+
+      for (d = new Date(sd); d <= new Date(ed); d.setDate(d.getDate() + 1)) {
+        var year = d.getFullYear();
+        var month = (d.getMonth() + 1) + "";
+        month = month.length < 2 ? "0" + month : month;
+        var day = d.getDate() + "";
+        day = day.length < 2 ? "0" + day : day;
+
+        var str = year + "-" + month + "-" + day;
+        curr_date = str;
+        fetch(`http://localhost:9000/getdata/` + startdate + '/' + str + '/' + stock)
+          .then(res => res.json())
+          .then(data => {
+            cdata = data.map(d => {
+              document.getElementById('cbp').innerHTML = "₹ " + d.Last_Price;
+              // cbp*num + avail
+              var n = d.Last_Price*ns + avail;
+              n = n.toFixed(2);
+
+              document.getElementById('portfolio').innerHTML = "₹ " + n; //+ port;
+              return { time: d.Date, open: parseFloat(d.Open_Price), high: parseFloat(d.High_Price), low: parseFloat(d.Low_Price), close: parseFloat(d.Close_Price) }
+            });
+            candleSeries.setData(cdata);
+          })
+          .catch(err => log(err))
+
+          fetch(`http://localhost:9000/getnews/`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            
+            document.getElementById("newsa").innerHTML=data.newsa.Title;
+            document.getElementById("linka").href=data.newsa.Links;
+            document.getElementById("newsb").innerHTML=data.newsb.Title;
+            document.getElementById("linkb").href=data.newsb.Links;
+            document.getElementById("newsc").innerHTML=data.newsc.Title;
+            document.getElementById("linkc").href=data.newsc.Links;
+            document.getElementById("sa").innerHTML=data.nra;
+            document.getElementById("sb").innerHTML=data.nrb;
+            document.getElementById("sc").innerHTML=data.nrc;
+          })
+          .catch(err => log(err))
+        await sleep(2000);
+      }
+    }
+
+
+  </script>
+</div>

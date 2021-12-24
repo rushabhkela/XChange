@@ -1,0 +1,239 @@
+<main>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="home.mp4" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>XChange</h1>
+                        <p>Invest Like a PRO</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Sensex</title>
+                    <rect width="100%" height="100%" fill="#777" />
+                    <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <image href="sensex.jpg" height="140" width="200" />
+                </svg>
+
+                <h2>SENSEX</h2>
+                <p><a class="btn btn-secondary" href="#" onclick="viewChart('sensex')"><b>View Charts</b></a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>SENSEX</title>
+                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                    <image href="rupee.jpg" height="140" width="200" />
+                </svg>
+
+                <h2>FOREX</h2>
+                <p><a class="btn btn-secondary" href="#" onclick="viewChart('forex')"><b>View Charts</b></a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>FOREX</title>
+
+                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+                    <image href="gainer.jpg" height="140" width="200" />
+                </svg>
+
+                <h2>Top Stocks</h2>
+                <p><a class="btn btn-secondary" href="#" onclick="viewChart('top')"><b>View Charts</b></a></p>
+            </div><!-- /.col-lg-4 -->
+        </div>
+        <br>
+        <br>
+        <div class="tradingview-widget-container" id="top" style="display: none;">
+            <div id="tradingview_a3978"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BSE-ITC/"
+                    rel="noopener" target="_blank"><span class="blue-text">ITC Chart</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.MediumWidget(
+                    {
+                        "symbols": [
+                            [
+                                "BSE:ITC|ALL"
+                            ],
+                            [
+                                "BSE:TCS|ALL"
+                            ],
+                            [
+                                "BSE:RELIANCE|ALL"
+                            ],
+                            [
+                                "BSE:HINDUNILVR|ALL"
+                            ],
+                            [
+                                "BSE:ONGC|ALL"
+                            ]
+                        ],
+                        "chartOnly": false,
+                        "width": 1300,
+                        "height": 400,
+                        "locale": "en",
+                        "colorTheme": "light",
+                        "gridLineColor": "rgba(240, 243, 250, 0)",
+                        "fontColor": "#787B86",
+                        "isTransparent": false,
+                        "autosize": false,
+                        "showFloatingTooltip": true,
+                        "showVolume": true,
+                        "scalePosition": "no",
+                        "scaleMode": "Normal",
+                        "fontFamily": "Trebuchet MS, sans-serif",
+                        "noTimeScale": false,
+                        "chartType": "area",
+                        "lineColor": "#2962FF",
+                        "bottomColor": "rgba(41, 98, 255, 0)",
+                        "topColor": "rgba(41, 98, 255, 0.3)",
+                        "container_id": "tradingview_a3978"
+                    }
+                );
+            </script>
+        </div>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" id="forex" style="display: none;">
+            <div id="tradingview_95244"></div>
+            <div class="tradingview-widget-copyright"><a
+                    href="https://www.tradingview.com/symbols/USDINR/?exchange=FX_IDC" rel="noopener"
+                    target="_blank"><span class="blue-text">USDINR Rates</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.MediumWidget(
+                    {
+                        "symbols": [
+                            [
+                                "FX_IDC:USDINR|ALL"
+                            ]
+                        ],
+                        "chartOnly": false,
+                        "width": 1300,
+                        "height": 400,
+                        "locale": "en",
+                        "colorTheme": "light",
+                        "gridLineColor": "rgba(240, 243, 250, 0)",
+                        "fontColor": "#787B86",
+                        "isTransparent": false,
+                        "autosize": false,
+                        "showFloatingTooltip": true,
+                        "showVolume": true,
+                        "scalePosition": "no",
+                        "scaleMode": "Normal",
+                        "fontFamily": "Trebuchet MS, sans-serif",
+                        "noTimeScale": false,
+                        "chartType": "area",
+                        "lineColor": "#2962FF",
+                        "bottomColor": "rgba(41, 98, 255, 0)",
+                        "topColor": "rgba(41, 98, 255, 0.3)",
+                        "container_id": "tradingview_95244"
+                    }
+                );
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" id="sensex">
+            <div id="tradingview_c0d92"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BSE-SENSEX/"
+                    rel="noopener" target="_blank"><span class="blue-text">SENSEX Quotes</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.MediumWidget(
+                    {
+                        "symbols": [
+                            [
+                                "BSE:SENSEX|ALL"
+                            ]
+                        ],
+                        "chartOnly": false,
+                        "width": 1300,
+                        "height": 400,
+                        "locale": "en",
+                        "colorTheme": "light",
+                        "gridLineColor": "rgba(240, 243, 250, 0)",
+                        "fontColor": "#787B86",
+                        "isTransparent": false,
+                        "autosize": false,
+                        "showFloatingTooltip": true,
+                        "showVolume": true,
+                        "scalePosition": "no",
+                        "scaleMode": "Normal",
+                        "fontFamily": "Trebuchet MS, sans-serif",
+                        "noTimeScale": false,
+                        "chartType": "area",
+                        "lineColor": "#2962FF",
+                        "bottomColor": "rgba(41, 98, 255, 0)",
+                        "topColor": "rgba(41, 98, 255, 0.3)",
+                        "container_id": "tradingview_c0d92"
+                    }
+                );
+            </script>
+        </div>
+
+        <script>
+            function viewChart(x) {
+                if(x == 'top') {
+                    document.getElementById('top').style.display = "block";
+                    document.getElementById('sensex').style.display = "none";
+                    document.getElementById('forex').style.display = "none";
+                }
+                else if(x == 'sensex') {
+                    document.getElementById('top').style.display = "none";
+                    document.getElementById('sensex').style.display = "block";
+                    document.getElementById('forex').style.display = "none";
+                }
+                else {
+                    document.getElementById('top').style.display = "none";
+                    document.getElementById('sensex').style.display = "none";
+                    document.getElementById('forex').style.display = "block";
+                }
+            }
+        </script>
+
+        <hr class="featurette-divider">
+
+        <img src="home1.png" style="width: 100%;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy;XChange &middot;</p>
+    </footer>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

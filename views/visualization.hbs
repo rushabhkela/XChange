@@ -1,0 +1,193 @@
+
+    <main>
+      <section class="py-5 text-center container">
+        <div id="company_container">
+      <select id="companies" class="form-select" name="companies" style="margin-left:10px">
+        <option value="BSE:RELIANCE">Reliance</option>
+        <option value="BSE:BAJFINANCE">Bajaj Finance</option>
+        <option value="BSE:HINDUNILVR">Hindu Unilever Ltd.</option>
+        <option value="BSE:HDFC">HDFC</option>
+        <option value="BSE:SBIN">State Bank of India</option>
+        <option value="BSE:ITC">ITC Ltd.</option>
+        <option value="BSE:MARUTI">Maruti Suzuki India Ltd.</option>
+        <option value="BSE:TCS">Tata Consultancy Services Ltd.</option>
+        <option value="BSE:INFY">Infosys</option>
+        <option value="BSE:HCLTECH">HCL Technologies</option>
+        <option value="BSE:HINDALCO">Hindalco Industries Ltd.</option>
+        <option value="BSE:ADANITRANS">Adani Transmission Ltd.</option>
+        <option value="BSE:ULTRACEMCO">UltraTech Cement Ltd.</option>
+        <option value="BSE:NESTLEIND">Nestle India Ltd.</option>
+        <option value="BSE:TATASTEEL">TATA Steel</option>
+        <option value="BSE:ADANIPORTS">Adani Ports and Special Economic Ltd.</option>
+        <option value="BSE:ONGC">Oil and Natural Gas Corporation Ltd.</option>
+        <option value="BSE:DABUR">Dabur India Ltd.</option>
+        <option value="BSE:BPCL">Bharat Petroleum Corporation Ltd.</option>
+        <option value="BSE:YESBANK">Yes Bank</option>
+        <option value="BSE:GAIL">GAIL (India) Ltd.</option>
+        <option value="BSE:COLPAL">Colgate-Palmolive India Ltd.</option>
+      </select>
+        </div>
+
+        <br>
+        <br>
+        <button id="get_data" onclick="getData()" class="btn btn-primary" style="margin-left: 5%;">Get Data</button>
+        
+      </section>
+
+      <div
+        class="row align-items-center justify-content-center"
+        style="margin-left: 25px; margin-right:35px;margin-top:auto;"
+      >
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/{{stockwithoutBSE}}/" rel="noopener" target="_blank"><span class="blue-text">{{stockwithoutBSE}} Profile</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+  {
+  "symbol": "{{stockwithoutBSE}}",
+  "width": 1300,
+  "height": 350,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+      </div>
+      <br>
+      <br>
+      <br>
+    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_c5169"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BSE-{{stockwithoutBSE}}/" rel="noopener" target="_blank"><span class="blue-text">{{stockwithoutBSE}} Chart</span></a> </div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 1300,
+  "height": 610,
+  "symbol": "BSE:{{stockwithoutBSE}}",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_c5169"
+}
+  );
+  </script>
+</div>
+<br>
+<br>
+<!-- TradingView Widget END -->
+      <span style="float:left;width:50%"><div
+          class="card border-0"
+          style="width: 40rem;margin-left: 95px;"
+        >
+          
+          <div class="card-body">
+            
+           <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BSE-{{stockwithoutBSE}}/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for {{stockwithoutBSE}}</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+  {
+  "interval": "1m",
+  "width": 600,
+  "isTransparent": false,
+  "height": 450,
+  "symbol": "BSE:{{stockwithoutBSE}}",
+  "showIntervalTabs": true,
+  "locale": "en",
+  "colorTheme": "light"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+          </div>
+        </div>
+      </span>
+
+      <span style="float:right;width:50%"><div
+          class="card border-0"
+          style="width: 43.5rem;margin-right: 105px;"
+        >
+          
+          <div class="card-body">
+           
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BSE-{{stockwithoutBSE}}/" rel="noopener" target="_blank"><span class="blue-text">{{stockwithoutBSE}} Quotes</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+  {
+  "symbol": "BSE:{{stockwithoutBSE}}",
+  "width": 630,
+  "height": 450,
+  "locale": "en",
+  "dateRange": "ALL",
+  "colorTheme": "light",
+  "trendLineColor": "rgba(41, 98, 255, 1)",
+  "underLineColor": "rgba(41, 98, 255, 0.3)",
+  "underLineBottomColor": "rgba(41, 98, 255, 0)",
+  "isTransparent": false,
+  "autosize": false,
+  "largeChartUrl": ""
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+          </div>
+        </div>
+      </span>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" style="margin-left:105px;width:22rem;">
+    <div class="card h-100">
+      
+      <div class="card-body">
+        <h5 class="card-title">52-Week High</h5>
+       <p class="card-text" style="font-weight: bold;font-size:45px">₹ 2751</p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="col" style="margin-left:105px;width:22rem;">
+    <div class="card h-100">
+     
+      <div class="card-body">
+        <h5 class="card-title">52-Week Low</h5>
+        <p class="card-text" style="font-weight: bold;font-size:45px">₹ 1830</p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="col" style="margin-left:125px;margin-right:3px;width:22rem;">
+    <div class="card h-100">
+     
+      <div class="card-body">
+        <h5 class="card-title">P/E Ratio</h5>
+        <p class="card-text" style="font-weight: bold;font-size:45px">31.29</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    </main>
+
+<script type="text/javascript">
+
+function getData()
+{
+  var company=document.getElementById("companies").value.slice(4);
+  window.location.replace("/visual/"+company);
+  document.getElementById("companies").value=company;
+}
+</script>
