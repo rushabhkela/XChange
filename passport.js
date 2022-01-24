@@ -15,7 +15,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://xchange-trading-terminal.herokuapp.com/auth/google/callback"
+    callbackURL: "http://localhost:9000/auth/google/callback"
 },
     function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ googleId: profile.id, email: profile.emails[0].value, name: profile.name.givenName + " " + profile.name.familyName }, function (err, user) {
