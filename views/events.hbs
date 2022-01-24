@@ -299,7 +299,7 @@
 
         var str = year + "-" + month + "-" + day;
         curr_date = str;
-        fetch(`http://localhost:9000/getdata/` + startdate + '/' + str + '/' + stock)
+        fetch(`https://xchange-trading-terminal.herokuapp.com/getdata/` + startdate + '/' + str + '/' + stock)
           .then(res => res.json())
           .then(data => {
             cdata = data.map(d => {
@@ -315,7 +315,7 @@
           })
           .catch(err => log(err))
 
-          fetch(`http://localhost:9000/getnews/`)
+          fetch(`https://xchange-trading-terminal.herokuapp.com/getnews/`)
           .then(res => res.json())
           .then(data => {
             console.log(data);
