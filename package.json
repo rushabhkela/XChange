@@ -21,8 +21,6 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "realtime-newsapi": "^1.1.2",
-    "sentiment": "^5.0.2",
-    "socket.io": "^4.2.0",
-    "socket.io-client": "^4.2.0"
+    "sentiment": "^5.0.2"
   }
 }
